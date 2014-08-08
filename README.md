@@ -45,9 +45,16 @@ class Catcher extends ExceptionCatcher {
 Next, add functions starting with `catch` 
 
 ```php
+// Template
 public function catchException(\Exception $e, $code, $fromConsole)
 {
     return 'Do what you wanna do!';
+}
+
+// Real world example
+public function catchNotFoundHttpException(\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e, $code, $fromConsole)
+{
+    return \View::make('pages.404');
 }
 ```
 
