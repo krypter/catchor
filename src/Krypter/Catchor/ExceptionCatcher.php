@@ -1,10 +1,22 @@
 <?php namespace Krypter\Catchor;
 
-use Illuminate\Foundation\Application;
-use ReflectionClass, ReflectionMethod;
-use App;
+use App, ReflectionClass, ReflectionMethod;
 
 abstract class ExceptionCatcher {
+
+    /**
+     * Register catch fonctions
+     *
+     * @var boolean
+     */
+    public $catch = true;
+
+    /**
+     * Register raw fonction
+     *
+     * @var boolean
+     */
+    public $raw = false;
 
     /**
      * Find catch methode and build them
@@ -13,10 +25,18 @@ abstract class ExceptionCatcher {
      */
     public function register()
     {
-        foreach ($this->getMethods() as $method)
-        {
-            if(str_contains($method->name, 'catch')) $this->build($method);
-        }
+        if($this->catch) $this->bind();
+        if($this->raw) $this->raw();
+    }
+
+    /**
+     * Build catch method
+     *
+     * @return void
+     */
+    public function bind()
+    {
+        foreach ($this->getMethods() as $method) if(str_contains($method->name, 'catch')) $this->build($method);
     }
 
     /**

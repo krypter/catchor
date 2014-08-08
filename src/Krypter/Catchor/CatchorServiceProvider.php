@@ -16,7 +16,11 @@ class CatchorServiceProvider extends ServiceProvider
         $this->package('krypter/catchor');
         foreach (Config::get('catchor::config.catchers') as $catcher)
         {
-            (new $catcher())->register();	
+            (new $catcher())->register();   
+        }
+        foreach (Config::get('catchor::config.raw_files') as $file)
+        {
+            include_once $file;   
         }
     }
 

@@ -1,8 +1,9 @@
 <?php
 return [
-
 	'catchers' => [
-		// Namespace off your catcher
+		// Namespace of your catchers
+	],
+	'raw_files' => [
+		app_path() . '/exceptions/catchers.php'
 	]
-
 ];
