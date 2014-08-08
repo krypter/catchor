@@ -16,7 +16,7 @@ Next, update `app/config/app.php` to include a reference to this package's servi
 
 ```php
 'providers' => [
-    'Krypter\Catchor\CatchorServiceProvider '
+    'Krypter\Catchor\CatchorServiceProvider'
 ]
 ```
 
