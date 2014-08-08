@@ -8,7 +8,7 @@ Install Catchor through Composer.
 
 ```js
 "require": {
-    "krypter/catchor": "0.1.*"
+    "krypter/catchor": "0.2"
 }
 ```
 
