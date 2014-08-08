@@ -12,19 +12,19 @@ Install Catchor through Composer.
 }
 ```
 
+Publish the config file from the command line. *(optional)*
+The config file will be publish here `app/config/packages/krypter/catchor/config.php`.
+
+```bash
+php artisan config:publish krypter/catchor
+```
+
 Update `app/config/app.php` to include a reference to this package's service provider in the providers array.
 
 ```php
 'providers' => [
     'Krypter\Catchor\CatchorServiceProvider'
 ]
-```
-
-Publish the config file from the command line. *(optional)*
-The config file will be publish here `app/config/packages/krypter/catchor/config.php`.
-
-```bash
-php artisan config:publish krypter/catchor
 ```
 
 ## Usage
