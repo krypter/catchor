@@ -1,6 +1,6 @@
 {
     "name": "krypter/catchor",
-    "description": "Class to catch and handle exceptions.",
+    "description": "This package gives you an easy way to manage exceptions.",
     "keywords": ["laravel", "exception"],
     "license": "MIT",
     "authors": [
